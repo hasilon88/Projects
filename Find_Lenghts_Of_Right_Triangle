@@ -1,0 +1,106 @@
+// TODO: Write a program that finds different lenghts of a right triangle.
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void Find_Length_A()
+{
+	system("cls");
+	
+	double UserB;
+	double UserC;
+
+	cout << "Length B of a right triangle: "; cin >> UserB;
+	cout << "Length C of a right triangle: "; cin >> UserC;
+
+	double A, B, C;
+
+	C = UserC * UserC;
+	B = UserB * UserB;
+	A = C - B;
+
+	double result = sqrt(A);
+
+	cout << endl << "Length of side A: " << result << endl << endl;
+	system("pause");
+}
+
+void Find_Length_B()
+{
+	system("cls");
+	
+	double UserA;
+	double UserC;
+
+	cout << "Length A of a right triangle: "; cin >> UserA;
+	cout << "Length C of a right triangle: "; cin >> UserC;
+
+	double A, B, C;
+
+	C = UserC * UserC;
+	A = UserA * UserA;
+	B = C - A;
+
+	double result = sqrt(B);
+
+	cout << endl << "Length of side B: " << result << endl << endl;
+	system("pause");
+
+}
+
+void Find_Length_C()
+{
+	system("cls");
+
+	double UserA;
+	double UserB;
+
+	cout << "Length A of a right triangle: "; cin >> UserA;
+	cout << "Length B of a right triangle: "; cin >> UserB;
+
+	double A, B, C;
+
+	A = UserA * UserA;
+	B = UserB * UserB;
+	C = A + B;
+
+	double result = sqrt(C);
+
+	cout << endl << "Length of side C (Hypotenuse): " << result << endl << endl;
+	system("pause");
+
+}
+
+int main()
+{
+	int user_choice = 0;
+
+	cout << "1 - Find length of side A (Required length of side C and B) \n";
+	cout << "2 - Find length of side B (Required length of side A and C) \n";
+	cout << "3 - Find length of side C (Required length of side A and B) \n";
+	cout << "4 - Exit program \n";
+	cout << "--> "; cin >> user_choice;
+
+	while (user_choice != 4)
+	{
+		switch (user_choice)
+		{
+			case 1: Find_Length_A(); break;
+			case 2: Find_Length_B(); break;
+			case 3: Find_Length_C(); break;
+		}
+		
+		system("cls");
+		
+		cout << "1 - Find length of side A (Required length of side C and B) \n";
+		cout << "2 - Find length of side B (Required length of side A and C) \n";
+		cout << "3 - Find length of side C (Required length of side A and B) \n";
+		cout << "4 - Exit program \n";
+		cout << "--> "; cin >> user_choice;
+	}
+	
+
+	return 0;
+}
